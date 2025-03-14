@@ -1,5 +1,6 @@
 import { flexRender, Table } from "@tanstack/react-table";
-import { LeadData } from "../../defs/columnDefs";
+
+import { LeadData } from "../types/Leads";
 
 export default function MainTable({ table }: { table: Table<LeadData> }) {
   return (

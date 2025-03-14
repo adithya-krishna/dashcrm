@@ -6,11 +6,13 @@ import {
   getPaginationRowModel,
   FilterFn,
 } from "@tanstack/react-table";
-import DATA from "../data.json";
-import { columns, LeadData } from "../defs/columnDefs";
-import MainTable from "../src/components/Table";
-import GlobalSearch from "../src/components/GlobalSearch";
-import { toggleDarkMode } from "../src/utils/themeUtils";
+
+import DATA from "../../../public/data.json";
+import { LeadData } from "../../shared/types/Leads";
+import MainTable from "../../shared/components/Table";
+import { toggleDarkMode } from "../../shared/utils/themeUtils";
+import GlobalSearch from "../../shared/components/GlobalSearch";
+import { columns } from "../../shared/defs/columnDefs";
 
 const globalFilterFn: FilterFn<LeadData> = (row, columnId, filterValue) => {
   const value = row.getValue(columnId);
@@ -63,7 +65,6 @@ const Homepage: React.FC = () => {
         </div>
       </div>
 
-      {/* PAGINATION CONTROLS */}
       <div className="mt-4">
         <button
           onClick={() => table.previousPage()}
