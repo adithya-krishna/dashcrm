@@ -23,7 +23,7 @@ const globalFilterFn: FilterFn<LeadData> = (row, columnId, filterValue) => {
 
 const pageSizes = [10, 25, 50, 150];
 
-const Homepage: React.FC = () => {
+const Dashboard: React.FC = () => {
   const [globalFilter, setGlobalFilter] = React.useState("");
   const [pagination, setPagination] = React.useState({
     pageIndex: 0,
@@ -103,4 +103,4 @@ const Homepage: React.FC = () => {
   );
 };
 
-export default Homepage;
+export default Dashboard;
