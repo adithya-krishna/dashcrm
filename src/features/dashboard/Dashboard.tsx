@@ -7,7 +7,7 @@ import {
   FilterFn,
 } from "@tanstack/react-table";
 
-import DATA from "../../../public/data.json";
+import DATA from "../../data.json";
 import { LeadData } from "../../shared/types/Leads";
 import MainTable from "../../shared/components/Table";
 import { toggleDarkMode } from "../../shared/utils/themeUtils";
