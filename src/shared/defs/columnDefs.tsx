@@ -1,6 +1,6 @@
 import { createColumnHelper } from "@tanstack/react-table";
-import moment from "moment";
 import { LeadData, StageTextEnum } from "../types/Leads";
+import { format, parse } from "date-fns";
 
 const columnHelper = createColumnHelper<LeadData>();
 
@@ -107,7 +107,8 @@ export const columns = [
     cell: ({ getValue }) => {
       const datetime = getValue();
       if (!datetime || datetime === "Not Set") return "-";
-      return moment(datetime, "DD-MM-YYYY").format("MMM Do");
+      const parsedDate = parse(datetime, "dd-MM-yyyy", new Date());
+      return format(parsedDate, "MMM do");
     },
   }),
   columnHelper.accessor("phone", {
@@ -123,7 +124,8 @@ export const columns = [
     cell: ({ getValue }) => {
       const datetime = getValue();
       if (!datetime || datetime === "Not Set") return "-";
-      return moment(datetime, "DD-MM-YYYY hh:mmA").format("MMM Do, hh:mm A");
+      const parsedDate = parse(datetime, "dd-MM-yyyy hh:mm a", new Date());
+      return format(parsedDate, "MMM do, hh:mm aa");
     },
   }),
 ];
